@@ -18,12 +18,10 @@ module.exports = {
             exclude: /node_modules/,
             loaders: ['react-hot', 'babel-loader'],
             include: path.join(__dirname, 'src')
-        }
+        },
+        { test: /\.scss$/, loaders: ["style-loader", "css-loader", "sass-loader", ], }
       ]
   },
-  resolve: {
-    root: path.resolve('src')
-},
 plugins: [
   new webpack.HotModuleReplacementPlugin()
 ]
